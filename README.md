@@ -12,7 +12,7 @@ Este repositorio contiene una guía completa que compara Python y Go (Golang), e
 
 4. [Ejemplos de Código](./ejemplos_codigo.md) - Ejemplos prácticos de código que muestran la sintaxis y características de ambos lenguajes en acción.
 
-5. [Ejemplos de Aplicaciones de Consola](./ejemplos_consola/README.md) - Implementaciones prácticas de aplicaciones de consola en Python y Go, siguiendo las mejores prácticas de cada lenguaje.
+5. [Proyectos de Aprendizaje](./proyectos_aprendizaje/README.md) - Implementaciones prácticas de aplicaciones en Python y Go organizadas por niveles de dificultad, siguiendo las mejores prácticas de cada lenguaje.
 
 6. [Recursos Adicionales](./recursos_adicionales.md) - Recopilación de documentación, tutoriales, cursos, libros y comunidades para seguir aprendiendo sobre ambos lenguajes.
 
@@ -24,7 +24,7 @@ Puedes leer los documentos en el orden presentado para obtener una comprensión 
 - Si ya conoces uno de los lenguajes y quieres entender las diferencias con el otro, ve a [Diferencias](./diferencias.md).
 - Si tienes un proyecto específico y quieres decidir qué lenguaje usar, consulta [Casos de Uso](./casos_de_uso.md).
 - Si quieres ver ejemplos concretos de código, revisa [Ejemplos de Código](./ejemplos_codigo.md).
-- Si quieres explorar implementaciones prácticas de aplicaciones de consola, visita [Ejemplos de Consola](./ejemplos_consola/README.md).
+- Si quieres explorar implementaciones prácticas organizadas por niveles de dificultad, visita [Proyectos de Aprendizaje](./proyectos_aprendizaje/README.md).
 
 ## Conclusión
 

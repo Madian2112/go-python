@@ -6,9 +6,16 @@ Este documento detalla los requisitos necesarios para ejecutar las aplicaciones 
 
 ### Requisitos de Sistema
 
-- **Python**: Versión 3.6 o superior
+- **Python**: Versión 3.6 o superior (3.8+ recomendado para microservicios)
   - Puedes verificar tu versión con `python --version` o `python3 --version`
   - Descarga: [Python.org](https://www.python.org/downloads/)
+
+### Dependencias por Proyecto
+
+- **Analizador de Logs**: No requiere dependencias externas
+- **Sistema de Gestión de Inventario**: No requiere dependencias externas
+- **API REST de Microservicios**: 
+  - FastAPI: `pip install fastapi uvicorn pydantic python-jose[cryptography] passlib[bcrypt] python-multipart requests`
 
 ### Configuración del Entorno
 
@@ -38,7 +45,7 @@ Este documento detalla los requisitos necesarios para ejecutar las aplicaciones 
 
 1. **Navegar al directorio del proyecto**:
    ```bash
-   cd ejemplos_consola/python/[nombre_proyecto]
+   cd proyectos_aprendizaje/python/[nombre_proyecto]
    ```
 
 2. **Ejecutar la aplicación**:
@@ -56,9 +63,17 @@ Este documento detalla los requisitos necesarios para ejecutar las aplicaciones 
 
 ### Requisitos de Sistema
 
-- **Go**: Versión 1.13 o superior
+- **Go**: Versión 1.13 o superior (1.18+ recomendado para microservicios)
   - Puedes verificar tu versión con `go version`
   - Descarga: [golang.org](https://golang.org/dl/)
+
+### Dependencias por Proyecto
+
+- **Analizador de Logs**: No requiere dependencias externas
+- **Sistema de Gestión de Inventario**: No requiere dependencias externas
+- **API REST de Microservicios**: 
+  - Gin Framework: Se instala automáticamente con `go mod tidy`
+  - Otras dependencias: JWT, CORS, UUID (se instalan automáticamente con `go mod tidy`)
 
 ### Configuración del Entorno
 
@@ -79,7 +94,7 @@ Este documento detalla los requisitos necesarios para ejecutar las aplicaciones 
 
 1. **Navegar al directorio del proyecto**:
    ```bash
-   cd ejemplos_consola/go/[nombre_proyecto]
+   cd proyectos_aprendizaje/go/[nombre_proyecto]
    ```
 
 2. **Compilar y ejecutar directamente**:

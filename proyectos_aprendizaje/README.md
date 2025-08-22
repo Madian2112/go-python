@@ -42,24 +42,36 @@ Para ejecutar los ejemplos de Python, necesitarás tener Python instalado en tu 
 
 #### Python
 - [Gestión de tareas (TODO app)](./python/todo_app/)
-- Analizador de Logs (próximamente)
+- [Analizador de Logs](./python/log_analyzer/)
 - Conversor de Formatos (próximamente)
 
 #### Go
 - [Gestión de tareas (TODO app)](./go/todo_app/)
-- Analizador de Logs (próximamente)
+- [Analizador de Logs](./go/log_analyzer/)
 - Conversor de Formatos (próximamente)
 
-### Nivel 2: Aplicaciones Intermedias (Próximamente)
+### Nivel 2: Aplicaciones Intermedias
 
-- API REST Cliente/Servidor
-- Sistema de Monitoreo
-- Procesador de Datos en Lotes
+#### Python
+- [Sistema de Gestión de Inventario](./python/inventory_system/)
+- Sistema de Monitoreo (próximamente)
+- Procesador de Datos en Lotes (próximamente)
 
-### Nivel 3: Aplicaciones Avanzadas (Próximamente)
+#### Go
+- [Sistema de Gestión de Inventario](./go/inventory_system/)
+- Sistema de Monitoreo (próximamente)
+- Procesador de Datos en Lotes (próximamente)
 
-- Sistema de Mensajería Distribuido
-- Microservicios con Service Discovery
-- Pipeline de ETL
+### Nivel 3: Aplicaciones Avanzadas
+
+#### Python
+- [API REST de Microservicios](./python/microservices_api/)
+- Sistema de Mensajería Distribuido (próximamente)
+- Pipeline de ETL (próximamente)
+
+#### Go
+- [API REST de Microservicios](./go/microservices_api/)
+- Sistema de Mensajería Distribuido (próximamente)
+- Pipeline de ETL (próximamente)
 
 Cada ejemplo implementa la misma funcionalidad en ambos lenguajes, lo que te permite comparar directamente los enfoques y elegir el que mejor se adapte a tus necesidades. Consulta el archivo [Niveles de Aprendizaje](./NIVELES_APRENDIZAJE.md) para más detalles sobre cada nivel.
