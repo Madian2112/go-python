@@ -1,0 +1,20 @@
+2023-08-21 10:15:32 INFO [Main] Application started successfully
+2023-08-21 10:15:33 DEBUG [DatabaseService] Connected to database server at 192.168.1.100:5432
+2023-08-21 10:15:35 INFO [UserService] User authentication service initialized
+2023-08-21 10:16:02 WARNING [SecurityModule] Failed login attempt for user 'admin' from IP 203.0.113.42
+2023-08-21 10:16:15 ERROR [PaymentService] Transaction failed: Connection timeout
+2023-08-21 10:16:18 DEBUG [PaymentService] Retrying transaction #12345
+2023-08-21 10:16:20 INFO [PaymentService] Transaction #12345 completed successfully
+2023-08-21 10:17:01 WARNING [SecurityModule] Unusual access pattern detected from IP 198.51.100.73
+2023-08-21 10:17:30 ERROR [DatabaseService] Query execution failed: Syntax error in SQL statement
+2023-08-21 10:17:45 CRITICAL [SystemMonitor] High CPU usage detected: 92%
+2023-08-21 10:18:02 INFO [UserService] User 'johndoe' logged in successfully
+2023-08-21 10:18:15 DEBUG [SessionManager] Created new session with ID: sess_a7bcd1234
+2023-08-21 10:18:30 INFO [ReportGenerator] Daily report generation started
+2023-08-21 10:19:05 WARNING [StorageService] Disk space below 15% threshold
+2023-08-21 10:19:20 ERROR [ReportGenerator] Failed to generate PDF report: Missing template
+2023-08-21 10:19:45 INFO [EmailService] Sent 15 notification emails
+2023-08-21 10:20:01 DEBUG [CacheService] Cache invalidated for user profiles
+2023-08-21 10:20:15 INFO [BackupService] Incremental backup completed in 45 seconds
+2023-08-21 10:20:30 WARNING [NetworkMonitor] Latency spike detected: 350ms
+2023-08-21 10:21:00 CRITICAL [SecurityModule] Possible brute force attack detected from IP 203.0.113.100
