@@ -1,0 +1,32 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'api-gateway'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['api-gateway:8080']
+        labels:
+          service: 'api-gateway'
+
+  - job_name: 'product-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['product-service:8081']
+        labels:
+          service: 'product-service'
+
+  - job_name: 'order-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['order-service:8082']
+        labels:
+          service: 'order-service'
+
+  - job_name: 'user-service'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['user-service:8083']
+        labels:
+          service: 'user-service'

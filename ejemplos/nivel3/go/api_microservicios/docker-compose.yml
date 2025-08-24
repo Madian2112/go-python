@@ -1,0 +1,164 @@
+version: '3.8'
+
+services:
+  # API Gateway
+  api-gateway:
+    build:
+      context: ./api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - PRODUCT_SERVICE_URL=http://product-service:8081
+      - ORDER_SERVICE_URL=http://order-service:8082
+      - USER_SERVICE_URL=http://user-service:8083
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - product-service
+      - order-service
+      - user-service
+    networks:
+      - microservices-net
+
+  # Servicio de Productos
+  product-service:
+    build:
+      context: ./product-service
+    environment:
+      - PORT=8081
+      - DB_HOST=product-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=products
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - product-db
+    networks:
+      - microservices-net
+
+  # Base de datos para Productos
+  product-db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=products
+    volumes:
+      - product-db-data:/var/lib/postgresql/data
+    networks:
+      - microservices-net
+
+  # Servicio de Pedidos
+  order-service:
+    build:
+      context: ./order-service
+    environment:
+      - PORT=8082
+      - DB_HOST=order-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=orders
+      - PRODUCT_SERVICE_URL=http://product-service:8081
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - order-db
+      - product-service
+    networks:
+      - microservices-net
+
+  # Base de datos para Pedidos
+  order-db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=orders
+    volumes:
+      - order-db-data:/var/lib/postgresql/data
+    networks:
+      - microservices-net
+
+  # Servicio de Usuarios
+  user-service:
+    build:
+      context: ./user-service
+    environment:
+      - PORT=8083
+      - DB_HOST=user-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=postgres
+      - DB_NAME=users
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - user-db
+    networks:
+      - microservices-net
+
+  # Base de datos para Usuarios
+  user-db:
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=users
+    volumes:
+      - user-db-data:/var/lib/postgresql/data
+    networks:
+      - microservices-net
+
+  # Prometheus para métricas
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - "9090:9090"
+    networks:
+      - microservices-net
+
+  # Grafana para visualización de métricas
+  grafana:
+    image: grafana/grafana:latest
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - microservices-net
+
+  # Jaeger para trazabilidad
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686" # UI
+      - "14268:14268" # Collector HTTP
+      - "6831:6831/udp" # Collector UDP
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge
+
+volumes:
+  product-db-data:
+  order-db-data:
+  user-db-data:
+  prometheus-data:
+  grafana-data:
