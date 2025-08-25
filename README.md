@@ -16,6 +16,14 @@ Este repositorio contiene una guía completa que compara Python y Go (Golang), e
 
 6. [Recursos Adicionales](./recursos_adicionales.md) - Recopilación de documentación, tutoriales, cursos, libros y comunidades para seguir aprendiendo sobre ambos lenguajes.
 
+### Guías de Aprendizaje Detalladas
+
+Si quieres aprender cualquiera de estos lenguajes desde cero hasta un nivel avanzado, hemos preparado unas guías completas para ti:
+
+*   **[📚 Guía de Aprendizaje de Go](./aprendizaje/go/README.md)**: Un temario completo que cubre desde los fundamentos hasta temas avanzados como microservicios, concurrencia y optimización de rendimiento.
+
+*   **[🐍 Guía de Aprendizaje de Python](./aprendizaje/python/README.md)**: Un recorrido exhaustivo por Python, desde la sintaxis básica hasta la programación orientada a objetos, concurrencia y metaprogramación.
+
 ## Cómo usar esta guía
 
 Puedes leer los documentos en el orden presentado para obtener una comprensión progresiva, o saltar directamente a la sección que más te interese:
