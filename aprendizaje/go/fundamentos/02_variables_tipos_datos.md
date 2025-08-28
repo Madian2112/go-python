@@ -300,8 +300,11 @@ var m map[string]int // Map vacío (nil)
 // Creación
 m := make(map[string]int)
 
+// Asignacion de Valores
+m["Juan"] = 1
+
 // Inicialización
-m := map[string]int{
+mad := map[string]int{
     "uno":  1,
     "dos":  2,
     "tres": 3,
